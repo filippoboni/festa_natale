@@ -4,263 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>30 Anni Gemelli Boni 🎄</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 50%, #8b0000 100%);
-            color: #fff;
-            overflow-x: hidden;
-        }
-
-        .snowflake {
-            position: fixed;
-            top: -10px;
-            z-index: 1;
-            color: #fff;
-            font-size: 1.5em;
-            opacity: 0.8;
-            animation: fall linear infinite;
-            pointer-events: none;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-            border: 3px solid #ffd700;
-        }
-
-        h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
-            color: #ffd700;
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700; }
-            50% { text-shadow: 0 0 30px #ffd700, 0 0 40px #ffd700, 0 0 50px #ff0000; }
-        }
-
-        .subtitle {
-            font-size: 1.8em;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .date {
-            font-size: 2em;
-            color: #90EE90;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.95);
-            color: #2d5a3d;
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-            border-left: 8px solid #c41e3a;
-        }
-
-        .info-card h2 {
-            color: #8b0000;
-            margin-bottom: 20px;
-            font-size: 2em;
-            border-bottom: 3px solid #ffd700;
-            padding-bottom: 10px;
-        }
-
-        .info-item {
-            margin: 15px 0;
-            font-size: 1.2em;
-            line-height: 1.8;
-        }
-
-        .info-item strong {
-            color: #2d5a3d;
-            display: inline-block;
-            min-width: 120px;
-        }
-
-        .dress-code {
-            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
-            color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 30px 0;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .dress-code h3 {
-            font-size: 2em;
-            margin-bottom: 15px;
-            color: #ffd700;
-        }
-
-        .dress-code p {
-            font-size: 1.3em;
-            line-height: 1.6;
-        }
-
-        .rsvp-form {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-            border-right: 8px solid #2d5a3d;
-        }
-
-        .rsvp-form h2 {
-            color: #8b0000;
-            margin-bottom: 25px;
-            font-size: 2em;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #2d5a3d;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #2d5a3d;
-            border-radius: 8px;
-            font-size: 1em;
-            font-family: inherit;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: #c41e3a;
-            box-shadow: 0 0 10px rgba(196, 30, 58, 0.3);
-        }
-
-        button {
-            background: linear-gradient(135deg, #2d5a3d 0%, #1a472a 100%);
-            color: #fff;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 30px;
-            font-size: 1.3em;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 20px;
-            font-weight: bold;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(135deg, #1a472a 0%, #2d5a3d 100%);
-        }
-
-        .success-message {
-            display: none;
-            background: #2d5a3d;
-            color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            text-align: center;
-            font-size: 1.2em;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 1.1em;
-            color: #ffd700;
-        }
-
-        .emoji {
-            font-size: 1.5em;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-            .subtitle {
-                font-size: 1.3em;
-            }
-            .info-card, .rsvp-form {
-                padding: 25px;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="snowflake-container"></div>
+
     <div class="container">
         <header>
-            <h1>🎄 30 Anni 🎄</h1>
-            <div class="subtitle">I Gemelli Boni</div>
-            <div class="date">25 Dicembre 2025</div>
-            <div style="margin-top: 20px; font-size: 1.1em; color: #ffd700; font-style: italic;">Fancy details demanded by Arianna Crasti</div>
+            <div class="header-decoration">🎬 Special Christmas Edition 🎬</div>
+            <h1><span class="emoji-bounce">🎄</span> 30 Anni <span class="emoji-bounce">🎁</span></h1>
+            <div class="subtitle">La Prima Dei Gemelli Boni</div>
+            <div class="date-box">
+                <span class="date">Mercoledì 25 Dicembre 2025</span>
+            </div>
+            <div class="fancy-note">
+                (Dettagli "Fancy" richiesti dalla produttrice esecutiva: Arianna Crasti)
+            </div>
         </header>
 
-        <div class="info-card">
-            <h2>🎅 Dettagli della Festa 🎁</h2>
-            <div class="info-item">
-                <strong>📍 Dove:</strong> Bar Speranza, Pavullo Nel Frignano
+        <section class="info-card" id="details">
+            <h2><span class="emoji">📍</span> Dettagli della Festa</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>📍 Location:</strong> Bar Speranza, Pavullo Nel Frignano
+                </div>
+                <div class="info-item">
+                    <strong>🕐 Data:</strong> Mercoledì 25 Dicembre 2025
+                </div>
+                <div class="info-item">
+                    <strong>⏰ Inizio:</strong> Dalle 19:00 in poi
+                </div>
+                <div class="info-item full-width">
+                    <strong>🎂 Evento:</strong> Tripla festa - Natale + 30° Compleanno dei Gemelli Boni!
+                </div>
             </div>
-            <div class="info-item">
-                <strong>🕐 Quando:</strong> Mercoledì 25 Dicembre 2025
-            </div>
-            <div class="info-item">
-                <strong>⏰ Orario:</strong> Dalle 19:00 in poi
-            </div>
-            <div class="info-item">
-                <strong>🎂 Evento:</strong> Tripla festa - Natale + 30° Compleanno dei Gemelli Boni!
-            </div>
-        </div>
+        </section>
 
-        <div class="dress-code">
-            <h3>✨ Dress Code ✨</h3>
-            <p class="emoji">🎅 🦌 🎄 ⛄ 🔔</p>
+        <section class="dress-code" id="dresscode">
+            <h3><span class="emoji">✨</span> Dress Code: "Mistletoe & Movie Magic" <span class="emoji">🎬</span></h3>
             <p><strong>Obbligatorio un accessorio natalizio!</strong></p>
-            <p>Cappelli di Babbo Natale, maglioni natalizi, renne luminose, campanellini... liberate la fantasia! Più è natalizio, meglio è! 🎁</p>
-        </div>
+            <p>Cappelli di Babbo Natale, maglioni natalizi, renne luminose, campanellini... liberate la fantasia!</p>
+            <p class="theme-hint">Più è "Home Alone" o "The Santa Clause", meglio è!</p>
+        </section>
 
-        <div class="rsvp-form">
-            <h2>🎉 Conferma la tua Presenza</h2>
+        <section class="rsvp-form" id="rsvp">
+            <h2><span class="emoji">✉️</span> Conferma la tua Presenza</h2>
             <form id="rsvpForm">
                 <div class="form-group">
                     <label for="nome">Nome e Cognome *</label>
@@ -281,80 +73,27 @@
 
                 <div class="form-group">
                     <label for="accessorio">Che accessorio natalizio indosserai? 🎄</label>
-                    <input type="text" id="accessorio" placeholder="es. Cappello di Babbo Natale">
+                    <input type="text" id="accessorio" placeholder="es. Maglione da Renna Luminoso">
                 </div>
 
                 <div class="form-group">
                     <label for="messaggio">Messaggio per i festeggiati (facoltativo)</label>
-                    <textarea id="messaggio" rows="4" placeholder="Auguri e buone feste! 🎅"></textarea>
+                    <textarea id="messaggio" rows="4" placeholder="Auguri e buone feste! Un brindisi ai vostri primi 30 anni... e al cinema di Natale! 🎅"></textarea>
                 </div>
 
-                <button type="submit">🎁 Confermo la Partecipazione!</button>
+                <button type="submit">🎬 Confermo la Partecipazione!</button>
             </form>
             <div class="success-message" id="successMessage">
-                ✨ Grazie! La tua partecipazione è stata registrata! Ci vediamo alla festa! 🎄🎉
+                ✨ **SUCCESS!** Grazie! La tua partecipazione è stata registrata! Preparati per la magia del Natale! 🎄🎉
             </div>
-        </div>
+        </section>
 
         <footer>
-            <p>🎄 Non vediamo l'ora di festeggiare insieme! 🎄</p>
-            <p>Per info: contattate i Gemelli Boni</p>
+            <p>Non vediamo l'ora di festeggiare con tutti voi! Buone Feste! 🎅</p>
+            <p class="contact-info">Per info: contattate i Gemelli Boni | **#Boni30MovieMagic**</p>
         </footer>
     </div>
 
-    <script>
-        // Crea fiocchi di neve animati
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerHTML = '❄';
-            snowflake.style.left = Math.random() * 100 + '%';
-            snowflake.style.animationDuration = Math.random() * 3 + 5 + 's';
-            snowflake.style.opacity = Math.random() * 0.5 + 0.3;
-            snowflake.style.fontSize = Math.random() * 1.5 + 0.5 + 'em';
-            document.body.appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, 8000);
-        }
-
-        setInterval(createSnowflake, 200);
-
-        // Gestione form RSVP
-        const form = document.getElementById('rsvpForm');
-        const successMessage = document.getElementById('successMessage');
-        const responses = [];
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nome = document.getElementById('nome').value;
-            const ospiti = document.getElementById('ospiti').value;
-            const accessorio = document.getElementById('accessorio').value;
-            const messaggio = document.getElementById('messaggio').value;
-            
-            const response = {
-                nome: nome,
-                ospiti: ospiti,
-                accessorio: accessorio,
-                messaggio: messaggio,
-                data: new Date().toLocaleString('it-IT')
-            };
-            
-            responses.push(response);
-            console.log('Risposta registrata:', response);
-            console.log('Tutte le risposte:', responses);
-            
-            form.style.display = 'none';
-            successMessage.style.display = 'block';
-            
-            setTimeout(() => {
-                form.reset();
-                form.style.display = 'block';
-                successMessage.style.display = 'none';
-            }, 5000);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
